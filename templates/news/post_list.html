@@ -1,0 +1,27 @@
+{% extends 'news/default.html' %}
+
+{% load custom_filters %}
+
+{% block title %}
+    Новости
+{% endblock title %}
+
+{% block content %}
+    <div style="display: flex; justify-content: space-between;">
+        <h1>Новости</h1>
+        <p class="text-muted" style="padding-top: 1.2rem">Всего новостей: {{ post_list|length}}</p>
+    </div>
+    {% if post_list %}
+        {% for post in post_list %}
+        <div class="news">
+            <a class="fs-4" href="{{ post.pk }}">{{ post.title|censor }}</a>
+            <div class="date">
+                <p class="fs-7">{{ post.date_joined|date:'j b Y, H:i' }}</p>
+            </div>
+            <p>{{ post.text|truncatewords:20|censor }}</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>А новостей на сегодня больше нет!</p>
+    {% endif%}
+{% endblock content %}
