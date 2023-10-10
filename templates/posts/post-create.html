@@ -1,0 +1,46 @@
+{% extends 'posts/default.html' %}
+
+{% block content %}
+  <h1>
+    {% if 'news' in request.path %}
+      Новость
+    {% else %}
+      Новая статья
+    {% endif %}
+  </h1>
+  <form class="needs-validation" novalidate action="" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="{{ form.title.id }}">{{ form.title.label }}</label>
+      {{ form.title }}
+    </div>
+    <div class="mb-3">
+      <label for="{{ form.text.id }}">{{ form.text.label }}</label>
+      {% if form.text.errors %}
+        {% load widget_tweaks %}
+          {{ form.text|attr:'class:form-control is-invalid'}}
+          <div class="invalid-feedback">{{ form.text.errors }}</div>
+      {% else %}
+        {{ form.text }}
+      {% endif %}
+    </div>
+    <div class="mb-3">
+      <label for="{{ form.category.id }}">{{ form.category.label }}</label>
+      {% for category in form.category %}
+        <div class="form-check">
+          {{ category }}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="mb-3">
+      <label for="{{ form.author.id }}">{{ form.author.label }}</label>
+      {{ form.author }}
+    </div>
+    {% if 'news' in request.path %}
+      <input class="btn btn-primary" type="submit" value="Добавить новость" />
+    {% else %}
+      <input class="btn btn-primary" type="submit" value="Добавить статью" />
+    {% endif %}
+    <input class="btn btn-light" type="button" onclick="history.back();" value="Отменить"/>
+  </form>
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'posts/posts.html' %}
+
+{% block title %}
+Поиск
+{% endblock title %}
+
+{% block header %}Поиск{% endblock header %}
+
+{% block filters %}
+  <form class="bg-light rounded-3 p-4" action="" method="get">
+      <div class="mb-3">
+        <label for="{{ filterset.form.title.id }}">{{ filterset.form.title.label }}</label>
+          {{ filterset.form.title }}
+        </div>
+      <div class="mb-3">
+        <label for="{{ filterset.form.category.id }}">{{ filterset.form.category.label }}</label>
+        {% for category in filterset.form.category %}
+          <div class="form-check">
+            {{ category }}
+          </div>
+        {% endfor %}
+      </div>
+      <div class="mb-3">
+        <label for="{{ filterset.form.date_joined_after.id }}">{{ filterset.form.date_joined_after.label }}</label>
+        {{ filterset.form.date_joined_after }}
+      </div>
+    <input class="btn btn-primary" type="submit" value="Найти посты" />
+  </form>
+{% endblock filters %}

@@ -1,0 +1,64 @@
+{% extends 'posts/default.html' %}
+
+{% load custom_tags_filters %}
+
+{% block title %}
+Новости
+{% endblock title %}
+
+{% block content %}
+  <div class="row mt-0 mb-3">
+    <div class="col-10">
+      <h1>{% block header %}Новости и статьи{% endblock header %}</h1>
+    </div>
+    {% if 'search' not in request.path %}
+    <div class="col-2 pt-4">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="newPostButton" data-bs-toggle="dropdown" aria-expanded="true">
+          Добавить
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="newPostButton">
+          <li><a class="dropdown-item" href="/posts/news/create">Новость</a></li>
+          <li><a class="dropdown-item" href="/posts/article/create">Статью</a></li>
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  {% block filters %}
+  {% endblock filters %}
+  <div>
+    <p class="text-muted">Постов: {{ paginator.object_list|length }}</p>
+  </div>
+  {% if posts %}
+    {% for post in posts %}
+      <div class="news">
+        <a class="fs-4" href="{{ post.pk }}">{{ post.title|censor }}</a>
+        <div class="date">
+          <p class="fs-7">{{ post.date_joined|date:'j b Y, H:i' }}</p>
+        </div>
+        <p>{{ post.text|truncatewords:20|censor }}</p>
+      </div>
+    {% endfor %}
+    {% if page_obj.has_other_pages %}
+      <nav class="pt-4" aria-label="Page navigation example">
+        <ul class="pagination">
+          {% get_pretty_page_range paginator page_obj.number 1 as page_range %}
+          {% for page in page_range %}
+            {% if page_obj.number == page %}
+              <li class="page-item active"><a class="page-link" href="#">{{ page }}</a></li>
+            {% else %}
+              {% if page == paginator.ELLIPSIS %}
+                <li class="page-item disabled"><a class="page-link" href="#">{{ paginator.ELLIPSIS }}</a></li>
+              {% else %}
+                <li class="page-item"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </nav>
+    {% endif %}
+  {% else %}
+    <p>А новостей на сегодня больше нет!</p>
+  {% endif %}
+{% endblock content %}

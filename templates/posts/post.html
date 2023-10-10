@@ -1,0 +1,23 @@
+{% extends 'posts/default.html' %}
+
+{% load custom_tags_filters %}
+
+{% block title %}
+    {{ post.title }}
+{% endblock title %}
+
+{% block content %}
+    <a href="/posts">← Все новости и статьи</a>
+    <h1>{{ post.title|censor }}</h1>
+    <div class="date">
+        <p class="fs-7">{{ post.date_joined|date:'j b Y, H:i' }}</p>
+    </div>
+    <p>{{ post.text|censor }}</p>
+    {% if post.type == 'NE' %}
+      <a class="btn btn-outline-primary" href="/posts/news/{{ post.pk }}/update" role="button">Редактировать</a>
+      <a class="btn btn-outline-danger" href="/posts/news/{{ post.pk }}/delete" role="button">Удалить</a>
+    {% elif post.type == 'AR' %}
+      <a class="btn btn-outline-primary" href="/posts/article/{{ post.pk }}/update" role="button">Редактировать</a>
+      <a class="btn btn-outline-danger" href="/posts/article/{{ post.pk }}/delete" role="button">Удалить</a>
+    {% endif %}
+{% endblock content %}
