@@ -2,18 +2,18 @@
 
 {% block content %}
   <h1>
-    {% if 'news' in request.path %}
-      Удаление новости
-    {% else %}
+    {% if 'article' in request.path %}
       Удаление статьи
+    {% else %}
+      Удаление новости
     {% endif %}
   </h1>
   <form action="" method="post">
     {% csrf_token %}
-    {% if 'news' in request.path %}
-      <p>Вы уверены, что хотите удалить новость «{{ object.title }}»?</p>
-    {% else %}
+    {% if 'article' in request.path %}
       <p>Вы уверены, что хотите удалить статью «{{ object.title }}»?</p>
+    {% else %}
+      <p>Вы уверены, что хотите удалить новость «{{ object.title }}»?</p>
     {% endif %}
     <input type="submit" value="Да, удалить" />
     <input type="button" onclick="history.back();" value="Отменить"/>

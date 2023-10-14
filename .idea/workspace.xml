@@ -5,22 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b43f62d3-38d0-444f-90db-f810c4389c14" name="Changes" comment="Отформатирован commands.txt">
-      <change afterPath="$PROJECT_DIR$/templates/posts/default.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/posts/post.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/posts/posts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3adf4c1d-f875-4108-82d4-e66f41c677f1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3adf4c1d-f875-4108-82d4-e66f41c677f1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3adf4c1d-f875-4108-82d4-e66f41c677f1/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3adf4c1d-f875-4108-82d4-e66f41c677f1/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/news_portal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/news_portal.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news/templatetags/custom_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/templatetags/custom_tags_filters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/templatetags/custom_tags_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/templatetags/custom_tags_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/news_portal/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/news_portal/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/news_portal/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/news_portal/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/news/default.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/news/post.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/news/post_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/posts/post-create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts/post-create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/posts/post-delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts/post-delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/posts/post-update.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts/post-update.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +41,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -52,43 +60,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/nikarefin/Yandex.Disk.localized/Skillfactory/news_portal/templates/news",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.sourceCode.HTML",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/nikarefin/Yandex.Disk.localized/Skillfactory/news_portal/templates/registration&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/registration" />
       <recent name="$PROJECT_DIR$/templates/news" />
       <recent name="$PROJECT_DIR$/static/js" />
       <recent name="$PROJECT_DIR$/news/templates" />
       <recent name="$PROJECT_DIR$/static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/static/js" />
       <recent name="$PROJECT_DIR$/static" />
-      <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/news/templates" />
       <recent name="$PROJECT_DIR$/templates/news" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django Server.news_portal">
     <configuration name="custom_tags_filters" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="news_portal" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -156,7 +165,13 @@
       <workItem from="1696403163602" duration="37513000" />
       <workItem from="1696459541391" duration="179000" />
       <workItem from="1696459735579" duration="1966000" />
-      <workItem from="1696514625734" duration="140876000" />
+      <workItem from="1696514625734" duration="153722000" />
+      <workItem from="1696973018184" duration="1743000" />
+      <workItem from="1696974777074" duration="6408000" />
+      <workItem from="1697017643048" duration="64000" />
+      <workItem from="1697018106201" duration="11375000" />
+      <workItem from="1697145627761" duration="1846000" />
+      <workItem from="1697148650274" duration="598000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />

@@ -11,18 +11,20 @@
     <div class="col-10">
       <h1>{% block header %}Новости и статьи{% endblock header %}</h1>
     </div>
-    {% if 'search' not in request.path %}
-    <div class="col-2 pt-4">
-      <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" id="newPostButton" data-bs-toggle="dropdown" aria-expanded="true">
-          Добавить
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="newPostButton">
-          <li><a class="dropdown-item" href="/posts/news/create">Новость</a></li>
-          <li><a class="dropdown-item" href="/posts/article/create">Статью</a></li>
-        </ul>
+    {% if perms.posts.add_post %}
+      {% if 'search' not in request.path %}
+      <div class="col-2 pt-4">
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="newPostButton" data-bs-toggle="dropdown" aria-expanded="true">
+            Добавить
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="newPostButton">
+            <li><a class="dropdown-item" href="/posts/news/create">Новость</a></li>
+            <li><a class="dropdown-item" href="/posts/article/create">Статью</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
+      {% endif %}
     {% endif %}
   </div>
   {% block filters %}

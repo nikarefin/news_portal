@@ -2,10 +2,10 @@
 
 {% block content %}
   <h1>
-    {% if 'news' in request.path %}
-      Новость
-    {% else %}
+    {% if 'article' in request.path %}
       Новая статья
+    {% else %}
+      Новость
     {% endif %}
   </h1>
   <form class="needs-validation" novalidate action="" method="post">
@@ -36,10 +36,10 @@
       <label for="{{ form.author.id }}">{{ form.author.label }}</label>
       {{ form.author }}
     </div>
-    {% if 'news' in request.path %}
-      <input class="btn btn-primary" type="submit" value="Добавить новость" />
-    {% else %}
+    {% if 'article' in request.path %}
       <input class="btn btn-primary" type="submit" value="Добавить статью" />
+    {% else %}
+      <input class="btn btn-primary" type="submit" value="Добавить новость" />
     {% endif %}
     <input class="btn btn-light" type="button" onclick="history.back();" value="Отменить"/>
   </form>

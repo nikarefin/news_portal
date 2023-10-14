@@ -5,6 +5,7 @@ from .filters import PostFilter
 from .forms import PostForm
 from .models import *
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import PermissionRequiredMixin
 
 
 class PostList(ListView):
@@ -39,10 +40,11 @@ class PostSearch(ListView):
         return context
 
 
-class NewsCreate(CreateView):
+class NewsAdd(CreateView, PermissionRequiredMixin):
     model = Post
     form_class = PostForm
-    template_name = 'posts/post-create.html'
+    template_name = 'posts/post-add.html'
+    permission_required = ('posts.add_post',)
 
     def form_valid(self, form):
         post = form.save(commit=False)
@@ -50,22 +52,25 @@ class NewsCreate(CreateView):
         return super().form_valid(form)
 
 
-class NewsUpdate(UpdateView):
+class NewsUpdate(UpdateView, PermissionRequiredMixin):
     model = Post
     form_class = PostForm
     template_name = 'posts/post-update.html'
+    permission_required = ('posts.update_post',)
 
 
-class NewsDelete(DeleteView):
+class NewsDelete(DeleteView, PermissionRequiredMixin):
     model = Post
     template_name = 'posts/post-delete.html'
     success_url = reverse_lazy('post_list')
+    permission_required = ('posts.delete_post',)
 
 
-class ArticleCreate(CreateView):
+class ArticleAdd(CreateView, PermissionRequiredMixin):
     model = Post
     form_class = PostForm
-    template_name = 'posts/post-create.html'
+    template_name = 'posts/post-add.html'
+    permission_required = ('posts.add_post',)
 
     def form_valid(self, form):
         post = form.save(commit=False)
@@ -73,13 +78,15 @@ class ArticleCreate(CreateView):
         return super().form_valid(form)
 
 
-class ArticleUpdate(UpdateView):
+class ArticleUpdate(UpdateView, PermissionRequiredMixin):
     model = Post
     form_class = PostForm
     template_name = 'posts/post-update.html'
+    permission_required = ('posts.update_post',)
 
 
-class ArticleDelete(DeleteView):
+class ArticleDelete(DeleteView, PermissionRequiredMixin):
     model = Post
     template_name = 'posts/post-delete.html'
     success_url = reverse_lazy('post_list')
+    permission_required = ('posts.delete_post',)
