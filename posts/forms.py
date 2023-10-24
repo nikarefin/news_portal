@@ -22,12 +22,13 @@ class PostForm(forms.ModelForm):
         )
     )
 
-    category = forms.ModelMultipleChoiceField(
+    category = forms.ModelChoiceField(
         label='Категория',
+        empty_label='Не выбрана',
         queryset=Category.objects.all(),
-        widget=forms.CheckboxSelectMultiple(
+        widget=forms.Select(
             attrs={
-                'class': 'form-check-input'
+                'class': 'form-select'
             }
         )
     )

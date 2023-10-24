@@ -20,11 +20,7 @@
     </div>
     <div class="mb-3">
       <label for="{{ form.category.id }}">{{ form.category.label }}</label>
-      {% for category in form.category %}
-        <div class="form-check">
-          {{ category }}
-        </div>
-      {% endfor %}
+      {{ form.category }}
     </div>
     <div class="mb-3">
       <label for="{{ form.author.id }}">{{ form.author.label }}</label>
