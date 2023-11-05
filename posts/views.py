@@ -10,6 +10,8 @@ from .forms import PostForm
 from .models import *
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.views import View
+from .tasks import notify_about_news
 
 
 class PostList(ListView):
